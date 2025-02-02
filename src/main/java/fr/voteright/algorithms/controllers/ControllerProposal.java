@@ -21,10 +21,10 @@ public class ControllerProposal {
     public String getProposalsOf(@RequestParam int community, @RequestParam int period) throws Exception {
         String request = HttpTools.get(AlgorithmsApplication.baseUrl + "/algo/communities/" + 13 + "/proposals/formatted?period=2025");
         ObjectMapper objectMapper = new ObjectMapper();
-        ArrayList<Proposal> utilisateurs = objectMapper.readValue(request, new TypeReference<ArrayList<Proposal>>() {
+        ArrayList<Proposal> proposals = objectMapper.readValue(request, new TypeReference<>() {
         });
 
-        System.out.println(utilisateurs);
+        System.out.println(proposals);
         return request;
     }
 }
