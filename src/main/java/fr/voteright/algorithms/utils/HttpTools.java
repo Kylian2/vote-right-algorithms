@@ -1,5 +1,7 @@
 package fr.voteright.algorithms.utils;
 
+import fr.voteright.algorithms.AlgorithmsApplication;
+
 import java.net.CookieManager;
 import java.net.CookiePolicy;
 import java.net.CookieStore;
@@ -28,6 +30,7 @@ public class HttpTools {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
                 .header("Accept", "application/json") // Indique qu'on attend une réponse JSON
+                .header("Authorization", "Bearer "+ AlgorithmsApplication.key) // Indique qu'on attend une réponse JSON
                 .GET()
                 .build();
 
