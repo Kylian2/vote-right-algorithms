@@ -15,4 +15,11 @@ public class Vote {
 
     public Vote() {}
 
+    public ArrayList<Integer> getPositive() {
+        return positive;
+    }
+
+    public ArrayList<Integer> getNegative() {
+        return negative;
+    }
 }

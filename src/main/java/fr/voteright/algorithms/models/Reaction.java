@@ -13,4 +13,7 @@ public class Reaction {
 
     public Reaction() {}
 
+    public ArrayList<Integer> getLike() {
+        return like;
+    }
 }
