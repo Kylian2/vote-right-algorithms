@@ -12,9 +12,8 @@ public class AlgorithmsApplication {
 
     public static void main(final String[] args) {
         SpringApplication.run(AlgorithmsApplication.class, args);
-        Dotenv dotenv = Dotenv.load();
-        key =  dotenv.get("KEY");
-        baseUrl =  dotenv.get("BASE_URL");
+        key = System.getenv("KEY");
+        baseUrl = System.getenv("BASE_URL");
     }
 
 }

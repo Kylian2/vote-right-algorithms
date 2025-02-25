@@ -23,8 +23,7 @@ public class AuthGuard extends GenericFilterBean {
     private final String apiKey;
 
     public AuthGuard() {
-        Dotenv dotenv = Dotenv.load();
-        this.apiKey = dotenv.get("KEY");
+        this.apiKey = System.getenv("KEY");
     }
 
     /**
