@@ -1,2 +1,7 @@
 server:
   port: 3334
+spring:
+  security:
+    user:
+      name: ${SECURITY_USER_NAME:defaultusername}
+      password: ${SECURITY_USER_PASSWORD:defaultpassword}
