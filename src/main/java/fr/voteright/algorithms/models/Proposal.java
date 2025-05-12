@@ -1,5 +1,6 @@
 package fr.voteright.algorithms.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Proposal {
@@ -21,6 +22,14 @@ public class Proposal {
 
     @JsonProperty("reaction")
     private Reaction reaction;
+
+    @JsonIgnore()
+    @JsonProperty("created_at")
+    private String created_at;
+
+    @JsonIgnore()
+    @JsonProperty("updated_at")
+    private String updated_at;
 
     public Proposal() {}
 

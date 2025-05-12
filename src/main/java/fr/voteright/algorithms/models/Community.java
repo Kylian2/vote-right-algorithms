@@ -50,6 +50,14 @@ public class Community {
     @JsonProperty("CMY_budget_theme_NB")
     private ArrayList<Theme> themes;
 
+    @JsonIgnore()
+    @JsonProperty("created_at")
+    private String created_at;
+
+    @JsonIgnore()
+    @JsonProperty("updated_at")
+    private String updated_at;
+
     Community() {}
 
     public Community(Community community) {

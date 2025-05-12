@@ -24,6 +24,10 @@ public class ControllerProposal {
         ObjectMapper objectMapper = new ObjectMapper();
         ArrayList<Proposal> proposals = objectMapper.readValue(request, new TypeReference<>() {});
 
+        if(proposals.isEmpty()){
+            return ResponseEntity.noContent().build();
+        }
+
         Community cmy = Community.getCommunity(community, period);
 
         Greedy greedy = new Greedy();
@@ -31,7 +35,8 @@ public class ControllerProposal {
             ArrayList<Proposal> bestProposals = greedy.maximizeTotalSatisfaction(proposals, new Community(cmy)).toArrayList();
             return ResponseEntity.ok(objectMapper.writeValueAsString(bestProposals));
         }catch (Exception e){
-            return ResponseEntity.noContent().build();
+            return ResponseEntity.badRequest().body(e.getMessage());
         }
+
     }
 }
